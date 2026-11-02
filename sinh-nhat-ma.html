@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Đăng ký chia sẻ sinh nhật Má</title>
+<meta name="description" content="Đăng ký chia sẻ trong buổi sinh nhật Má/cô Nhất Phương Hồng, ngày 03/11/2026. Mỗi người từ 1 đến 5 phút.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap">
+<style>
+/* Bố cục: một cột hẹp như tờ phiếu đăng ký. Màu theo nhận diện Vietwise: tím mận + vàng. */
+:root {
+  --bg: #faf6fb; --surface: #ffffff; --fg: #2a1630; --muted: #6b5775; --line: #e5d9ea;
+  --plum: #6a2466; --btn-bg: #6a2466; --btn-fg: #ffffff; --gold: #ffc83d; --gold-fg: #2a1630;
+  --chip-on-bg: #f3e6f1; --ok: #2c7a4b; --ok-bg: #e6f4ec; --danger: #b3261e; --danger-bg: #fbe9e7;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1b0f21; --surface: #2a1833; --fg: #f6eef8; --muted: #bda8c7; --line: #4a3360;
+    --plum: #e9b9e3; --btn-bg: #ffc83d; --btn-fg: #2a1630; --chip-on-bg: #3d2650;
+    --ok: #7fd3a1; --ok-bg: #1f3a2b; --danger: #ff9a90; --danger-bg: #4a2220; color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 56px;
+}
+.wrap { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0; }
+h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(30px, 7vw, 42px); line-height: 1.15; margin: 6px 0 12px; text-wrap: balance; color: var(--plum); }
+.lead { margin: 0; max-width: 58ch; }
+.rule { display: flex; align-items: center; gap: 14px; margin-top: 16px; padding: 12px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.rule .t { font-family: var(--font-display); font-weight: 800; font-size: 28px; line-height: 1; background: var(--gold); color: var(--gold-fg); border-radius: 10px; padding: 10px 12px; }
+.rule p { margin: 0; font-size: 14.5px; color: var(--muted); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 22px 20px; }
+h2 { font-size: 18px; margin: 0 0 4px; font-weight: 700; }
+.sub { margin: 0 0 18px; color: var(--muted); font-size: 14.5px; }
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; min-width: 0; }
+label, legend { font-weight: 600; font-size: 14.5px; padding: 0; }
+.opt { font-weight: 400; color: var(--muted); }
+input[type="text"], textarea { font: inherit; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 11px 12px; width: 100%; min-width: 0; }
+textarea { min-height: 88px; resize: vertical; }
+input::placeholder, textarea::placeholder { color: var(--muted); opacity: .8; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+input[type="text"]:focus-visible, textarea:focus-visible { outline-color: var(--plum); outline-offset: 0; border-color: var(--plum); }
+fieldset { border: 0; margin: 0 0 18px; padding: 0; min-width: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.chip { position: relative; }
+.chip input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.chip span { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); font-size: 14.5px; font-weight: 500; }
+.chip input:checked + span { background: var(--chip-on-bg); border-color: var(--plum); color: var(--plum); font-weight: 700; }
+.chip input:focus-visible + span { outline: 3px solid var(--gold); outline-offset: 2px; }
+.mins { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-top: 8px; }
+.mins .chip span { width: 100%; justify-content: center; flex-direction: column; border-radius: 12px; min-height: 64px; line-height: 1.2; padding: 8px 4px; }
+.mins .chip b { font-family: var(--font-display); font-size: 26px; }
+.mins .chip small { font-size: 12.5px; color: var(--muted); font-weight: 400; }
+.hint { font-size: 13.5px; color: var(--muted); margin: 2px 0 0; }
+.sep { border: 0; border-top: 1px solid var(--line); margin: 6px 0 20px; }
+.check { display: flex; gap: 12px; align-items: flex-start; margin: 4px 0 20px; }
+.check input { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--plum); flex: none; }
+.check label { font-weight: 500; }
+.btn { font: inherit; font-weight: 700; border: 0; cursor: pointer; min-height: 48px; padding: 12px 22px; border-radius: 12px; background: var(--btn-bg); color: var(--btn-fg); }
+.btn.ghost { background: transparent; color: var(--fg); border: 1px solid var(--line); font-weight: 600; }
+.btn:disabled { opacity: .6; cursor: default; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.msg { margin: 0 0 16px; padding: 10px 12px; border-radius: 10px; font-size: 14.5px; }
+.msg.info { background: var(--chip-on-bg); color: var(--fg); }
+.err-text { color: var(--danger); font-size: 14px; margin: 0; }
+dl.sum { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 14px 0 18px; }
+dl.sum dt { color: var(--muted); font-size: 14px; }
+dl.sum dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.done-badge { display: inline-block; font-size: 13px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: var(--ok-bg); color: var(--ok); margin-bottom: 8px; }
+.copybox { font-size: 14px; min-height: 150px; margin-top: 10px; }
+.foot { text-align: center; font-family: var(--font-display); font-weight: 700; color: var(--plum); letter-spacing: .04em; margin: 4px 0 0; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+@media (max-width: 420px) { .card { padding: 18px 14px; } dl.sum { grid-template-columns: 1fr; gap: 0; } dl.sum dd { margin-bottom: 8px; } }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Cộng đồng Vietwise · Ngày 03/11/2026</p>
+    <h1>Chia sẻ mừng sinh nhật Má</h1>
+    <p class="lead">Vietwise trân trọng chào đón những món quà tinh thần từ các đại diện cộng đồng trong hệ sinh thái dành tặng Má/cô Nhất Phương Hồng: một lời chúc, một kỷ niệm, một bài hát, một bài thơ hay một hình ảnh bạn muốn gửi. Mời bạn đăng ký để ban tổ chức sắp xếp thứ tự và khung giờ.</p>
+    <div class="rule">
+      <div class="t" aria-hidden="true">1-5'</div>
+      <p><strong>Mỗi người chia sẻ từ 1 đến 5 phút</strong>. Bạn chọn thời lượng vừa đủ để buổi gặp gỡ còn chỗ cho thật nhiều người cùng nói.</p>
+    </div>
+  </header>
+
+  <main id="main" class="wrap" style="gap:24px"></main>
+
+  <p class="foot">BIẾT ƠN VÔ HẠN!</p>
+</div>
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none" title="Kênh gửi đăng ký"></iframe>
+
+<script>
+(function () {
+  /* Link Web app Apps Script nhận đăng ký (ghi vào tab "ChiaSeSinhNhatMa" của Google Sheet). */
+  var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxdOMUbfjLmgug7-i5jm_dcncKtQRgx65VxvDwerAEOcaf1DJOYGULYc9FV0tB6a1u2qg/exec";
+
+  var main = document.getElementById("main");
+  var iframe = document.getElementById("hidden_iframe");
+  var KINDS = ["Lời chúc", "Kỷ niệm với Má", "Bài hát hoặc thơ", "Video hoặc hình ảnh", "Món quà khác"];
+  var pending = null;   // lần gửi đang chờ kết quả
+
+  function el(tag, attrs, kids) {
+    var n = document.createElement(tag);
+    for (var k in (attrs || {})) {
+      if (k === "class") n.className = attrs[k];
+      else if (k === "text") n.textContent = attrs[k];
+      else if (k.slice(0, 2) === "on") n.addEventListener(k.slice(2), attrs[k]);
+      else if (attrs[k] === true) n.setAttribute(k, "");
+      else if (attrs[k] !== false && attrs[k] != null) n.setAttribute(k, attrs[k]);
+    }
+    (kids || []).forEach(function (c) { if (c != null) n.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
+    return n;
+  }
+  function hidden(name, value) { return el("input", { type: "hidden", name: name, value: value }); }
+
+  function copyText(text, onDone, onFail) {
+    var p = null;
+    try { p = navigator.clipboard && navigator.clipboard.writeText(text); } catch (e) { p = null; }
+    if (p && p.then) p.then(onDone, onFail); else onFail();
+  }
+  function formatReg(v) {
+    return [
+      "ĐĂNG KÝ CHIA SẺ SINH NHẬT MÁ CÔ NHẤT PHƯƠNG HỒNG (03/11/2026)",
+      "Họ và tên: " + v.hoTen,
+      "Zalo/SĐT: " + v.lienHe,
+      v.congDong ? "Cộng đồng đại diện: " + v.congDong : null,
+      "Món quà tinh thần: " + v.hinhThuc,
+      "Nội dung: " + v.noiDung,
+      "Thời lượng: " + v.phut + " phút",
+      v.khungGio ? "Khung giờ có thể phát biểu: " + v.khungGio : null,
+      v.luuY ? "Lưu ý để BTC sắp xếp: " + v.luuY : null
+    ].filter(Boolean).join("\n");
+  }
+
+  /* ---------- Phiếu ---------- */
+  function renderForm(prefill) {
+    var d = prefill || { hoTen: "", lienHe: "", congDong: "", hinhThuc: KINDS[0], noiDung: "", phut: 2, khungGio: "", luuY: "" };
+    var errBox = el("p", { class: "err-text", role: "alert" });
+    var tail = el("div");
+
+    var hoTen = el("input", { type: "text", id: "f-name", name: "hoTen", autocomplete: "name", maxlength: "80", placeholder: "Ví dụ: Nguyễn Thị An", value: d.hoTen });
+    var lienHe = el("input", { type: "text", id: "f-contact", name: "lienHe", autocomplete: "tel", maxlength: "40", placeholder: "Số Zalo hoặc số điện thoại", value: d.lienHe });
+    var congDong = el("input", { type: "text", id: "f-group", name: "congDong", maxlength: "120", placeholder: "Ví dụ: lớp Nghề làm Bố Mẹ, CLB Sao Sáng, Gương Thần…", value: d.congDong });
+    var noiDung = el("textarea", { id: "f-topic", name: "noiDung", maxlength: "600", placeholder: "Một hai câu cho ban tổ chức biết bạn mang đến điều gì." }); noiDung.value = d.noiDung;
+    var khungGio = el("input", { type: "text", id: "f-time", name: "khungGio", maxlength: "80", placeholder: "Ví dụ: chỉ phát biểu được từ 12h30 đến 13h30", value: d.khungGio });
+    var luuY = el("textarea", { id: "f-note", name: "luuY", maxlength: "500", placeholder: "Ví dụ: cần phát biểu sớm vì có lịch, tham gia trực tuyến, cần chiếu hình hoặc video, hát cần nhạc nền…" }); luuY.value = d.luuY;
+    var agree = el("input", { type: "checkbox", id: "f-agree" });
+
+    var kindChips = el("div", { class: "chips" }, KINDS.map(function (k, i) {
+      var inp = el("input", { type: "radio", name: "hinhThuc", value: k, id: "kind-" + i });
+      if (k === d.hinhThuc) inp.checked = true;
+      return el("label", { class: "chip" }, [inp, el("span", { text: k })]);
+    }));
+    var minChips = el("div", { class: "mins" }, [1, 2, 3, 4, 5].map(function (m) {
+      var inp = el("input", { type: "radio", name: "phut", value: String(m), id: "min-" + m });
+      if (m === Number(d.phut)) inp.checked = true;
+      return el("label", { class: "chip" }, [inp, el("span", {}, [el("b", { text: String(m) }), el("small", { text: "phút" })])]);
+    }));
+
+    function read() {
+      var k = kindChips.querySelector("input:checked"), m = minChips.querySelector("input:checked");
+      return { hoTen: hoTen.value.trim(), lienHe: lienHe.value.trim(), congDong: congDong.value.trim(), hinhThuc: k ? k.value : "",
+               noiDung: noiDung.value.trim(), phut: m ? Number(m.value) : 0, khungGio: khungGio.value.trim(), luuY: luuY.value.trim() };
+    }
+    function validate(v) {
+      if (v.hoTen.length < 2) return "Bạn nhập giúp họ và tên nhé.";
+      if (v.lienHe.length < 6) return "Bạn nhập giúp số Zalo hoặc số điện thoại để ban tổ chức liên hệ.";
+      if (!v.hinhThuc) return "Bạn chọn một món quà tinh thần.";
+      if (v.noiDung.length < 5) return "Bạn ghi vài chữ về điều định chia sẻ.";
+      if (!(v.phut >= 1 && v.phut <= 5)) return "Thời lượng chia sẻ từ 1 đến 5 phút.";
+      if (!agree.checked) return "Bạn tick xác nhận chia sẻ trong thời lượng đã chọn.";
+      return "";
+    }
+
+    var submit = el("button", { class: "btn", type: "submit", text: "Gửi đăng ký" });
+    var form = el("form", { class: "card", method: "POST", action: SCRIPT_URL, target: "hidden_iframe", novalidate: true, onsubmit: function (e) {
+      var v = read();
+      var bad = validate(v);
+      errBox.textContent = bad;
+      if (bad) { e.preventDefault(); return; }
+      submit.disabled = true; submit.textContent = "Đang gửi…";
+      pending = { v: v, timer: setTimeout(function () { if (pending) { var p = pending; pending = null; renderUnsure(p.v); } }, 15000) };
+      /* để trình duyệt gửi form như bình thường vào khung ẩn */
+    } }, [
+      el("h2", { text: "Phiếu đăng ký" }),
+      el("p", { class: "sub", text: "Điền xong bấm gửi, ban tổ chức sẽ nhận ngay trong bảng danh sách." }),
+      el("div", { class: "field" }, [el("label", { for: "f-name", text: "Họ và tên" }), hoTen]),
+      el("div", { class: "field" }, [el("label", { for: "f-contact", text: "Zalo hoặc số điện thoại" }), lienHe]),
+      el("div", { class: "field" }, [el("label", { for: "f-group" }, ["Cộng đồng bạn đại diện trong hệ sinh thái ", el("span", { class: "opt", text: "(nếu có)" })]), congDong]),
+      el("fieldset", {}, [el("legend", { text: "Món quà tinh thần bạn mang đến" }), kindChips]),
+      el("div", { class: "field" }, [el("label", { for: "f-topic", text: "Nội dung định chia sẻ" }), noiDung]),
+      el("fieldset", {}, [
+        el("legend", { text: "Thời lượng bạn cần" }), minChips,
+        el("p", { class: "hint", text: "Từ 1 đến 5 phút. Tham khảo: nói thong thả khoảng 120 chữ mỗi phút." })
+      ]),
+      el("hr", { class: "sep" }),
+      el("div", { class: "field" }, [el("label", { for: "f-time" }, ["Khung giờ bạn có thể phát biểu ", el("span", { class: "opt", text: "(nếu bị giới hạn)" })]), khungGio]),
+      el("div", { class: "field" }, [el("label", { for: "f-note" }, ["Lưu ý thêm để ban tổ chức sắp xếp ", el("span", { class: "opt", text: "(nếu có)" })]), luuY]),
+      el("div", { class: "check" }, [agree, el("label", { for: "f-agree", text: "Tôi sẽ chia sẻ trong thời lượng đã chọn." })]),
+      hidden("loaiForm", "chia_se_sinh_nhat_ma"),
+      el("div", { class: "hp", "aria-hidden": "true" }, [el("label", { for: "f-web", text: "Không điền ô này" }), el("input", { type: "text", id: "f-web", name: "website", tabindex: "-1", autocomplete: "off" })]),
+      errBox,
+      el("div", { class: "row", style: "margin-top:12px" }, [submit]),
+      tail
+    ]);
+    return form;
+  }
+
+  /* ---------- Sau khi gửi ---------- */
+  function renderDone(v) {
+    main.textContent = "";
+    var dl = el("dl", { class: "sum" }, [
+      el("dt", { text: "Họ và tên" }), el("dd", { text: v.hoTen }),
+      el("dt", { text: "Liên hệ" }), el("dd", { text: v.lienHe }),
+      v.congDong ? el("dt", { text: "Cộng đồng" }) : null, v.congDong ? el("dd", { text: v.congDong }) : null,
+      el("dt", { text: "Món quà tinh thần" }), el("dd", { text: v.hinhThuc }),
+      el("dt", { text: "Nội dung" }), el("dd", { text: v.noiDung }),
+      el("dt", { text: "Thời lượng" }), el("dd", { text: v.phut + " phút" }),
+      v.khungGio ? el("dt", { text: "Khung giờ" }) : null, v.khungGio ? el("dd", { text: v.khungGio }) : null,
+      v.luuY ? el("dt", { text: "Lưu ý" }) : null, v.luuY ? el("dd", { text: v.luuY }) : null
+    ]);
+    main.appendChild(el("section", { class: "card", role: "status" }, [
+      el("span", { class: "done-badge", text: "Đã gửi" }),
+      el("h2", { text: "Cảm ơn bạn, ban tổ chức đã nhận đăng ký" }),
+      el("p", { class: "sub", text: "Ban tổ chức sẽ liên hệ bạn qua Zalo hoặc số điện thoại khi sắp xếp thứ tự chia sẻ." }),
+      dl,
+      el("div", { class: "row" }, [el("button", { class: "btn ghost", type: "button", text: "Đăng ký thêm một người khác", onclick: renderStart })])
+    ]));
+    window.scrollTo(0, 0);
+  }
+  function renderUnsure(v) {
+    var text = formatReg(v);
+    var ta = el("textarea", { class: "copybox", readonly: true, "aria-label": "Phiếu đăng ký" }); ta.value = text;
+    var status = el("p", { class: "hint" });
+    main.textContent = "";
+    main.appendChild(el("section", { class: "card", role: "status" }, [
+      el("h2", { text: "Chưa chắc phiếu đã đến ban tổ chức" }),
+      el("p", { class: "sub", text: "Kết nối đang chậm. Bạn chép phiếu bên dưới và gửi cho ban tổ chức qua Zalo để chắc chắn nhé." }),
+      ta,
+      el("div", { class: "row", style: "margin-top:10px" }, [
+        el("button", { class: "btn", type: "button", text: "Chép phiếu", onclick: function () {
+          copyText(text, function () { status.textContent = "Đã chép. Bạn dán vào tin nhắn gửi ban tổ chức."; }, function () { ta.focus(); ta.select(); status.textContent = "Phiếu đã được chọn sẵn, bạn bấm Ctrl+C hoặc giữ để chép."; });
+        } }),
+        el("button", { class: "btn ghost", type: "button", text: "Quay lại phiếu", onclick: function () { main.textContent = ""; main.appendChild(renderForm(v)); } })
+      ]),
+      status
+    ]));
+  }
+  function renderStart() { main.textContent = ""; main.appendChild(renderForm()); window.scrollTo(0, 0); }
+
+  /* Khung ẩn tải xong = Apps Script đã trả lời */
+  iframe.addEventListener("load", function () {
+    if (!pending) return;
+    var p = pending; pending = null; clearTimeout(p.timer);
+    renderDone(p.v);
+  });
+
+  renderStart();
+})();
+</script>
+</body>
+</html>
